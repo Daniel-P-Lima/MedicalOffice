@@ -1,8 +1,8 @@
 <?php
 
-    $dsn = 'mysql:host=127.0.0.1; dbname=consultorio_medico';
+    $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
     $usuarioBanco = 'root';
-    $senhaBanco = 'password';
+    $senhaBanco = '';
 
     $email = $_POST["email"];
     $senhaFornecida = $_POST['senha']; // A senha fornecida é a senha sem hash

@@ -1,7 +1,7 @@
 <?php
-  $dsn = 'mysql:host=127.0.0.1; dbname=consultorio_medico';
+  $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
   $usuarioBanco = 'root';
-  $senhaBanco = 'password';
+  $senhaBanco = '';
   $id = $_GET["id"];
   $nome = "";
   $senha = "";

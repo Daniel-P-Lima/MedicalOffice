@@ -1,8 +1,4 @@
 <?php
-    echo (ini_set('display_errors', 1));
-    echo (ini_set('display_startup_errors', 1));
-    echo (error_reporting(E_ALL));
-    
     $nomeUsuario = $_POST["nome"];
     $emailUsuario = $_POST["email"];
     $senhaUsuario = $_POST["senha"];
@@ -10,9 +6,9 @@
 
 
     // BANCO DE DADOS
-    $dsn = 'mysql:host=127.0.0.1; dbname=consultorio_medico';
+    $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
     $usuarioBanco = "root";
-    $senhaBanco = "password";
+    $senhaBanco = "";
 
     if(!(filter_var($emailUsuario, FILTER_VALIDATE_EMAIL))){
         echo "<h1>Digite um email válido</h1>";
