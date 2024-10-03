@@ -40,12 +40,11 @@
                 // Converte a data para o formato YYYY-MM-DD
                 $dataFormatada = $dataObj->format('Y-m-d');
             } else {
-                header("Location: agendar_consulta.php?agendada=" . false);
-                echo "Data da consulta inválida.";
+                header("Location: agendar_consulta.php?agendada=" . 2);
                 exit;
             }
         } else {
-            echo "Data da consulta não informada.";
+            header("Location: agendar_consulta.php?agendada=" . 0);
             exit;
         }
 
@@ -58,7 +57,7 @@
 
         $stmt->execute();
 
-        header("Location: agendar_consulta.php?agendada=" . true);
+        header("Location: agendar_consulta.php?agendada=" . 1);
 
 
     }catch(PDOException $e) {
