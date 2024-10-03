@@ -19,3 +19,27 @@ INSERT INTO usuario (nome, email, senha, sexo) VALUES
 ('Julia Santos', 'julia.santos@example.com', 'a1bd26f8b2d4f6b8d0e2f4b6d8e0f2b4d6f8b0d2e4f6b8d0e2f4b6d8e0f2b4d', 'Feminino');
 
 DROP TABLE usuario;
+
+CREATE TABLE medicos (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(50) NOT NULL,
+	cro VARCHAR(20) NOT NULL,
+	disponivel BOOLEAN NOT NULL
+);
+
+INSERT INTO medicos (nome, cro, disponivel) VALUES
+("Dr. José Paulo", "123123", 1),
+("Dra. Marcela Oliveira", "123124", 1),
+("Dra. Paula Lucas", "123125", 0),
+("Dr. João Pedro", "123126", 1),
+("Dr. Naldo Moura", "123128", 0);
+
+CREATE TABLE consultas(
+	id_consulta INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	data_consulta DATE NOT NULL,
+	fk_key_paciente INT NOT NULL,
+	fk_key_medico INT NOT NULL,
+	FOREIGN KEY (fk_key_paciente) REFERENCES usuario(id),
+	FOREIGN KEY (fk_key_medico) REFERENCES medicos(id)
+	
+);
