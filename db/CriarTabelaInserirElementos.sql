@@ -43,3 +43,9 @@ CREATE TABLE consultas(
 	FOREIGN KEY (fk_key_medico) REFERENCES medicos(id)
 	
 );
+
+
+SELECT data_consulta, usuario.nome, medicos.nome
+FROM consultas
+INNER JOIN usuario ON consultas.fk_key_paciente = usuario.id 
+INNER JOIN medicos ON consultas.fk_key_medico = medicos.id; 
