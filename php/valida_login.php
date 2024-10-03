@@ -5,7 +5,7 @@
     $senhaBanco = 'password';
 
     $email = $_POST["email"];
-    $senhaFornecida = $_POST['senha'];
+    $senhaFornecida = $_POST['senha']; // A senha fornecida é a senha sem hash
 
 
     if(!empty($email) && !empty($senhaFornecida)) {
@@ -18,7 +18,12 @@
             $stmt->execute();
             $usuario = $stmt->fetch();
 
-            $senhaFornecidaComHash = hash("sha256", $senhaFornecida);
+            /* Aqui é calculado o hash da senha recebida para validação depois
+            A ideia é criptografar a senha somente quando o usuário se cadastra
+            Para não trafegar na rede a senha já com hash, que seria a senha de acesso
+            */
+            $senhaFornecidaComHash = hash("sha256", $senhaFornecida); 
+            
             
 
             /*if($usuario["email"] == $email && $usuario["senha"] == $senha) {        
@@ -33,14 +38,11 @@
             if ($usuario["email"] == $email) {
                 $idUsuario = $usuario["id"];
                 $senhaArmazenada = $usuario["senha"];
-                
-                if ($senhaFornecidaComHash == $senhaArmazenada) {
+                // A senha recebida + hash é comparada com a senha com hash armazenada no banco
+                if ($senhaFornecidaComHash == $senhaArmazenada) { 
                     header("Location: usuario_validado.php?id=" . $idUsuario);
                 } else {
-                    echo $senhaArmazenada;
-                    echo "<hr/>";
-                    echo $senhaFornecida;
-                    // header("Location: login.php?login=erro");
+                    header("Location: login.php?login=erro");
 
                 }
             } else {
@@ -53,4 +55,8 @@
 
         }
     }
+    
+
+
+
 ?>
