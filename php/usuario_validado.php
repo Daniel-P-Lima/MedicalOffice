@@ -1,7 +1,7 @@
 <?php
-  $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
+  $dsn = 'mysql:host=127.0.0.1; dbname=consultorio_medico';
   $usuarioBanco = 'root';
-  $senhaBanco = '';
+  $senhaBanco = 'password';
   $id = $_GET["id"];
   $nome = "";
   $senha = "";
@@ -28,6 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     
     
@@ -46,8 +47,10 @@
             <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
             </li>
         </ul>
-        <form action="index.php" class="d-flex">
-            <button class="btn btn-outline-success" style="--bs-btn-padding-x: 1rem;" type="submit">Sair</button>
+        <form action="index.php" class="d-flex mr-1">
+            <button class="btn btn-danger me-2" type="submit">
+                <i class="bi bi-box-arrow-right me-2"></i>Sair
+            </button>
         </form>
         </div>
     </div>

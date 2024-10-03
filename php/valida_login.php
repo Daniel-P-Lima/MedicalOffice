@@ -1,22 +1,24 @@
 <?php
 
-    $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
+    $dsn = 'mysql:host=127.0.0.1; dbname=consultorio_medico';
     $usuarioBanco = 'root';
-    $senhaBanco = '';
+    $senhaBanco = 'password';
 
     $email = $_POST["email"];
     $senhaFornecida = $_POST['senha'];
 
 
-    if(!empty($email) && !empty($senha)) {
+    if(!empty($email) && !empty($senhaFornecida)) {
         try {
             $conexao = new PDO($dsn, $usuarioBanco, $senhaBanco);
-            $query = "SELECT email, senha FROM usuario WHERE email = :email";
+            $query = "SELECT email, senha, id FROM usuario WHERE email = :email";
             $stmt = $conexao->prepare($query);
 
             $stmt->bindValue(":email", $email);
             $stmt->execute();
             $usuario = $stmt->fetch();
+
+            $senhaFornecidaComHash = hash("sha256", $senhaFornecida);
             
 
             /*if($usuario["email"] == $email && $usuario["senha"] == $senha) {        
@@ -24,21 +26,25 @@
                 
             } 
             */
+
             
 
+
             if ($usuario["email"] == $email) {
-                $senhaHashArmazenada = $usuario['senha'];
-        
-                if (password_verify($senha, $senhaArmazenada)) {
-                    echo "teste";
-                    header("Location: usuario_validado.php?id=" . $id);
+                $idUsuario = $usuario["id"];
+                $senhaArmazenada = $usuario["senha"];
+                
+                if ($senhaFornecidaComHash == $senhaArmazenada) {
+                    header("Location: usuario_validado.php?id=" . $idUsuario);
                 } else {
-                    echo "$senha";
-                    echo "Usuário ou senha inválidos.";
+                    echo $senhaArmazenada;
+                    echo "<hr/>";
+                    echo $senhaFornecida;
+                    // header("Location: login.php?login=erro");
+
                 }
             } else {
                 // Usuário não encontrado
-                echo "$senha";
                 echo "Usuário ou senha não encontrado.";
             }  
         }    
@@ -47,8 +53,4 @@
 
         }
     }
-    
-
-
-
 ?>

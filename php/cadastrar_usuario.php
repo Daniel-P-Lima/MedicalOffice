@@ -1,5 +1,4 @@
 <?php
-    
     $nomeUsuario = $_POST["nome"];
     $emailUsuario = $_POST["email"];
     $senhaUsuario = $_POST["senha"];
@@ -7,9 +6,9 @@
 
 
     // BANCO DE DADOS
-    $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
-    $usuario = "root";
-    $senha = "";
+    $dsn = 'mysql:host=127.0.0.1; dbname=consultorio_medico'; // Mudar conforme o necessário
+    $usuarioBanco = "root";
+    $senhaBanco = "password"; // Mudar conforme o necessário
 
     if(!(filter_var($emailUsuario, FILTER_VALIDATE_EMAIL))){
         echo "<h1>Digite um email válido</h1>";
@@ -17,10 +16,7 @@
     }
 
     try {
-        $conexao = new PDO($dsn, $usuario, $senha);
-        
-        $senhaUsuario = hash('sha256', $senha);
-
+        $conexao = new PDO($dsn, $usuarioBanco, $senhaBanco);
         
         $query = "INSERT INTO usuario (nome, email, senha, sexo) VALUES (:nome, :email, :senha, :sexo)";
     

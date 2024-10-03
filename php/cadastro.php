@@ -27,7 +27,7 @@
 </nav>
 
   <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <form class="row g-3 " onsubmit="return calcularHash()" method="POST" action="cadastrar_usuario.php">
+    <form class="row g-3 "  method="POST" action="cadastrar_usuario.php" onsubmit="return hashPassword()">
     <div class="col-md-3">
         <label for="formGroupExampleInput" class="form-label">Nome</label>
         <input name="nome" type="nome" class="form-control" id="inputName2" placeholder="Nome" required>
