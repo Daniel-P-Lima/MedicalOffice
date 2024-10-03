@@ -1,8 +1,14 @@
 <?php
+  session_start();
+  if (!isset($_SESSION['id_paciente'])) {
+      
+      header('Location: login.php');
+      exit;
+  }
   $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
   $usuarioBanco = 'root';
   $senhaBanco = '';
-  $id = $_GET["id"];
+  $id = $_SESSION["id_paciente"];
   $nome = "";
   $senha = "";
   if(isset($id)) {
@@ -29,7 +35,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../imgs/hospital(1).svg" type="image/x-icon">
     
     
     <title>Dr Saúde</title>
@@ -47,8 +53,8 @@
             <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
             </li>
         </ul>
-        <form action="index.php" class="d-flex mr-1">
-            <button class="btn btn-danger me-2" type="submit">
+        <form action="logout.php" class="d-flex mr-1">
+            <button id="sair" class="btn btn-danger me-2" type="submit">
                 <i class="bi bi-box-arrow-right me-2"></i>Sair
             </button>
         </form>

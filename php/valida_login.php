@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
     $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
     $usuarioBanco = 'root';
@@ -23,14 +24,6 @@
             Para não trafegar na rede a senha já com hash, que seria a senha de acesso
             */
             $senhaFornecidaComHash = hash("sha256", $senhaFornecida); 
-            
-            
-
-            /*if($usuario["email"] == $email && $usuario["senha"] == $senha) {        
-                $usuarioAutenticado = true;
-                
-            } 
-            */
 
             
 
@@ -38,16 +31,15 @@
             if ($usuario["email"] == $email) {
                 $idUsuario = $usuario["id"];
                 $senhaArmazenada = $usuario["senha"];
-                // A senha recebida + hash é comparada com a senha com hash armazenada no banco
                 if ($senhaFornecidaComHash == $senhaArmazenada) { 
-                    header("Location: usuario_validado.php?id=" . $idUsuario);
+                    header("Location: usuario_validado.php?");
+                    $_SESSION['id_paciente'] = $usuario['id'];
                 } else {
                     header("Location: login.php?login=erro");
 
                 }
             } else {
-                // Usuário não encontrado
-                echo "Usuário ou senha não encontrado.";
+                header("Location: login.php?login=erro2");
             }  
         }    
         catch(PDOException $e) {

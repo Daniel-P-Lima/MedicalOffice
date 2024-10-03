@@ -1,8 +1,12 @@
-function calcularHash() {
-    var senha = document.getElementById("senha").value;
-    var hash = CryptoJS.SHA256(senha);
+function hashPassword() {
+    var senhaInput = document.getElementById('senha');
+    var senha = senhaInput.value;
 
-    senha.value = hash;
-    return hash;
+    // Hashear a senha usando SHA-256
+    var senhaHash = CryptoJS.SHA256(senha).toString();
 
+    // Substituir o valor do campo de senha pelo hash
+    senhaInput.value = senhaHash;
+
+    return true; // Prosseguir com o envio do formulário
 }

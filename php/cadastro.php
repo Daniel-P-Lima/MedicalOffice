@@ -6,9 +6,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>Dr Saúde</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/hash_senha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <link rel="shortcut icon" href="../imgs/hospital(1).svg" type="image/x-icon">
+    <script>
+      function hashPassword() {
+      var senhaInput = document.getElementById('senha');
+      var senha = senhaInput.value;
+
+      // Hashear a senha usando SHA-256
+      var senhaHash = CryptoJS.SHA256(senha).toString();
+
+      // Substituir o valor do campo de senha pelo hash
+      senhaInput.value = senhaHash;
+
+      return true; // Prosseguir com o envio do formulário
+}
+    </script>
   </head>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -27,7 +41,7 @@
 </nav>
 
   <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <form class="row g-3 "  method="POST" action="cadastrar_usuario.php" onsubmit="return hashPassword()">
+    <form class="row g-3 "  method="POST" action="cadastrar_usuario.php" onsubmit="return hashPassword();">
     <div class="col-md-3">
         <label for="formGroupExampleInput" class="form-label">Nome</label>
         <input name="nome" type="nome" class="form-control" id="inputName2" placeholder="Nome" required>
