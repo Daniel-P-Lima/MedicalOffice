@@ -4,7 +4,7 @@ Bem-vindo ao projeto **Escritório Médico Online**! Este sistema web foi desenv
 
 ## 📝 Sobre o Projeto
 
-Este projeto implementa os conceitos básicos do MySQL, incluindo operações de **Criar**, **Ler**, **Atualizar**, **Deletar** e **Excluir** (CRUD). Utilizamos PHP com PDO (PHP Data Objects) para conectar o front-end ao back-end de forma segura e eficiente.
+Este projeto implementa os conceitos básicos do MySQL, incluindo operações de **Criar**, **Ler**, **Atualizar**, **Deletar** e **Excluir** (CRUD). Foi utilizado PHP com PDO (PHP Data Objects) para conectar o front-end ao back-end de forma segura e eficiente.
 
 Para garantir a segurança dos dados dos usuários, o JavaScript é utilizado para gerar um **hash** das senhas antes de armazená-las no banco de dados. Isso assegura que mesmo em caso de acesso indevido ao banco, as senhas estarão protegidas.
 
