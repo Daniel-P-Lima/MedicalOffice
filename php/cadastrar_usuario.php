@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $nomeUsuario = $_POST["nome"];
     $emailUsuario = $_POST["email"];
     $senhaUsuario = $_POST["senha"];
@@ -31,8 +32,8 @@
     
         $stmt->execute();
 
-        $idUsuario = $conexao->lastInsertId();
-        header("Location: usuario_validado.php?id=" . $idUsuario);
+        $_SESSION["id_paciente"] = $conexao->lastInsertId();
+        header("Location: usuario_validado.php?");
 
     
     } catch (PDOException $e) {
