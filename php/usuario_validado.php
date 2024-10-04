@@ -1,32 +1,5 @@
 <?php
-  session_start();
-  if (!isset($_SESSION['id_paciente'])) {
-      
-      header('Location: login.php');
-      exit;
-  }
-  $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
-  $usuarioBanco = 'root';
-  $senhaBanco = '';
-  $id = $_SESSION["id_paciente"];
-  $nome = "";
-  $senha = "";
-  if(isset($id)) {
-    try {
-      $conexao = new PDO($dsn, $usuarioBanco, $senhaBanco);
-     
-      $query = "SELECT nome, sexo FROM usuario WHERE id = :id ";
-
-      $stmt = $conexao->prepare($query);
-      $stmt->bindValue(":id", $id);
-      $stmt->execute();
-
-      $usuario = $stmt->fetch();
-    }catch(PDOException $e) {
-      echo "Erro: " . $e->getMessage();
-    }
-  }
-
+  require_once("usuario_validado_script.php");
 ?>
 
 <html>
@@ -90,13 +63,13 @@
                   </a>
                 </div>
                 <div class="col-4 d-flex justify-content-center text-center">
-                  <a class="text-decoration-none" href="verificar_consulta.php">
+                  <a class="text-decoration-none" href="listar_consultas.php">
                     <img src="../imgs/verifica.png" width="70" height="70">
                     <p>Verificar Consultas</p>
                   </a>
                 </div>
                 <div class="col-4 d-flex justify-content-center text-center">
-                  <a class="text-decoration-none" href="cancelar_consulta.php">
+                  <a class="text-decoration-none" href="solicitar_cancelamento.php">
                     <img src="../imgs/cancela.png" width="70" height="70">
                     <p>Solicitar Cancelamento De Consulta</p>
                   </a>

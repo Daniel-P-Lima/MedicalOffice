@@ -35,6 +35,9 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
             </li>
+            <li>
+                <a class="nav-link active" aria-current="page" href="../php/usuario_validado.php">Página Inicial</a>
+            </li>
         </ul>
         </div>
     </div>

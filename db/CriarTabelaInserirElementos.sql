@@ -44,7 +44,9 @@ CREATE TABLE consultas(
 	
 );
 
-
+/*
+	CONSULTA NO BANCO PARA RETORNAR QUANTIDADE DE CONSULTAS DO USUÁRIO COM ALGUM MÉDICO
+*/
 SELECT data_consulta, usuario.nome, medicos.nome
 FROM consultas
 INNER JOIN usuario ON consultas.fk_key_paciente = usuario.id 
