@@ -55,6 +55,11 @@
             <button type="submit" class="btn btn-primary">Agendar consulta</button>
         </div>
     </form>
+    <div id="alertBox" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+        <h4 id="alertHeading" class="alert-heading"></h4>
+        <p id="alertMessage"></p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <div>
         <?php if($consultaValidada == 1){?>
             <div class="alert alert-success" role="alert">
@@ -72,8 +77,8 @@
 
             <?php }?>
     </div>
-
-    <script src="../js/input_para_consulta.js" >
-        
-    </script>
+    
+    <script src="../js/input_para_consulta.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>  
 </body>
