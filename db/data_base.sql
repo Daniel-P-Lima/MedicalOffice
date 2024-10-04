@@ -29,6 +29,20 @@ CREATE TABLE medicos (
 	disponivel BOOLEAN NOT NULL
 );
 
+
+INSERT INTO medicos (nome, cro, disponivel) VALUES 
+('Dr. Pedro Paulo', '39485712093874', 1),
+('Dra. Livia Sales', '58721364829517', 0),
+('Dra. Ana Luiza', '19283746502814', 0),
+('Dr. Carlos Eduardo', '48392018475629', 1),
+('Dra. Mariana Silva', '75649382014578', 1),
+('Dr. Felipe Santos', '10293847561904', 0),
+('Dra. Julia Pereira', '56473829104836', 1),
+('Dra. Beatriz Costa', '38475619283745', 0),
+('Dr. Rafael Oliveira', '75692038471628', 1),
+('Dra. Tatiane Martins', '12093847561239', 0);
+
+
 CREATE TABLE consultas(
 	id_consulta INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	data_consulta DATE NOT NULL,
