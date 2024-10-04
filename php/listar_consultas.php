@@ -22,9 +22,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
-                    </li>
                     <li>
                         <a class="nav-link active" aria-current="page" href="../php/usuario_validado.php">Página Inicial</a>
                     </li>

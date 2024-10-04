@@ -15,7 +15,7 @@
     try {
       $conexao = new PDO($dsn, $usuarioBanco, $senhaBanco);
      
-      $query = "SELECT nome, sexo FROM usuario WHERE id = :id ";
+      $query = "SELECT nome, sexo, id FROM usuario WHERE id = :id ";
 
       $stmt = $conexao->prepare($query);
       $stmt->bindValue(":id", $id);

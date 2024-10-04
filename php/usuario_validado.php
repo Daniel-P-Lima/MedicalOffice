@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
+            <a class="nav-link active" aria-current="page" href="usuario_validado.php">Página Inicial</a>
             </li>
         </ul>
         <form action="logout.php" class="d-flex mr-1">
@@ -43,15 +43,16 @@
               <?php
               $nome = $usuario["nome"];
               $sexo = $usuario["sexo"];
+              $id = $usuario["id"];
 
               if($sexo == "Masculino") {
-                  echo "Seja Bem-Vindo! " . $nome;
+                  echo "Seja Bem-Vindo! " . $nome . "<br/> Número de cadastro: " . $id;
               }
               else if($sexo == "Feminino") {
-                echo "Seja Bem-Vinda! " . $nome;
+                echo "Seja Bem-Vinda! " . $nome. "<br/> Número de cadastro: " . $id;
               }
               else {
-                echo "Seja Bem-Vindo(a)! " . $nome;
+                echo "Seja Bem-Vindo(a)! " . $nome. "<br/> Número de cadastro: " . $id;
               }?>
             </div>
             <div class="card-body">
