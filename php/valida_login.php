@@ -1,4 +1,5 @@
 <?php
+    require_once("conexao.php");
     session_start();
 
     $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
@@ -11,9 +12,9 @@
 
     if(!empty($email) && !empty($senhaFornecida)) {
         try {
-            $conexao = new PDO($dsn, $usuarioBanco, $senhaBanco);
+            
             $query = "SELECT email, senha, id FROM usuario WHERE email = :email";
-            $stmt = $conexao->prepare($query);
+            $stmt = $pdo->prepare($query);
 
             $stmt->bindValue(":email", $email);
             $stmt->execute();

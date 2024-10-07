@@ -1,4 +1,5 @@
 <?php
+    require_once("conexao.php");
     session_start();
 
     if(!(isset($_SESSION["id_paciente"]))) {
@@ -6,21 +7,16 @@
         exit;
     }
 
-    $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
-    $usuarioBanco = "root";
-    $senhaBanco = "";
     $idUsuario = $_SESSION["id_paciente"];
 
     try {
-        $conexao = new PDO($dsn, $usuarioBanco, $senhaBanco);
-
         $query = "SELECT id_consulta, data_consulta, medicos.nome
         FROM consultas
         INNER JOIN usuario ON consultas.fk_key_paciente = usuario.id 
         INNER JOIN medicos ON consultas.fk_key_medico = medicos.id
         WHERE usuario.id = :id_usuario;";
         
-        $stmt = $conexao->prepare($query);
+        $stmt = $pdo->prepare($query);
         $stmt->bindValue(":id_usuario", $idUsuario);
         $stmt->execute();
         
