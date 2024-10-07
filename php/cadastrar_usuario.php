@@ -1,4 +1,5 @@
 <?php
+    require_once("conexao.php");
     session_start();
     $nomeUsuario = $_POST["nome"];
     $emailUsuario = $_POST["email"];
@@ -7,9 +8,7 @@
 
 
     // BANCO DE DADOS
-    $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
-    $usuarioBanco = "root";
-    $senhaBanco = "";
+    
 
     if(!(filter_var($emailUsuario, FILTER_VALIDATE_EMAIL))){
         echo "<h1>Digite um email válido</h1>";
@@ -17,12 +16,10 @@
     }
 
     try {
-        $conexao = new PDO($dsn, $usuarioBanco, $senhaBanco);
-        
         $query = "INSERT INTO usuario (nome, email, senha, sexo) VALUES (:nome, :email, :senha, :sexo)";
     
        
-        $stmt = $conexao->prepare($query);
+        $stmt = $pdo->prepare($query);
     
     
         $stmt->bindValue(":nome", $nomeUsuario);
@@ -32,7 +29,7 @@
     
         $stmt->execute();
 
-        $_SESSION["id_paciente"] = $conexao->lastInsertId();
+        $_SESSION["id_paciente"] = $pdo->lastInsertId();
         header("Location: usuario_validado.php?");
 
     
