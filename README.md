@@ -45,15 +45,16 @@ Para garantir a segurança dos dados dos usuários, o JavaScript é utilizado pa
 
 3. **Configure as Credenciais**
 
-   - Nos arquivos `.php`, insira as credenciais do seu banco de dados MySQL.
+   - Dentro do diretório /php, existe um arquivo ```conexao.php``` onde é colocado as credenciais do banco de dados.
+   - É necessário também importar ele em cada arquivo, mas já está importado com ```require_once()```
+   - Como exemplo: 
 
    ```php
-   <?php
-   $host = 'localhost';
-   $dbname = 'nome_do_banco';
-   $username = 'seu_usuario';
-   $password = 'sua_senha';
-   ?>
+   $host = "localhost";
+   $db = "consultorio_medico";
+   $user = "root";
+   $pass = "";
+   $charset = "utf8mb4";
    ```
 
 4. **Inicie a Aplicação**

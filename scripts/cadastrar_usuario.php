@@ -12,7 +12,7 @@
 
     if(!(filter_var($emailUsuario, FILTER_VALIDATE_EMAIL))){
         echo "<h1>Digite um email válido</h1>";
-        header("Location: cadastro.php?email=erro");
+        header("Location: ../php/cadastro.php?email=erro");
     }
 
     try {
@@ -30,7 +30,7 @@
         $stmt->execute();
 
         $_SESSION["id_paciente"] = $pdo->lastInsertId();
-        header("Location: usuario_validado.php?");
+        header("Location: ../php/usuario_validado.php?");
 
     
     } catch (PDOException $e) {

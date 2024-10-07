@@ -2,10 +2,6 @@
     require_once("conexao.php");
     session_start();
 
-    $dsn = 'mysql:host=localhost; dbname=consultorio_medico';
-    $usuarioBanco = 'root';
-    $senhaBanco = '';
-
     $email = $_POST["email"];
     $senhaFornecida = $_POST['senha']; // A senha fornecida é a senha sem hash
 
@@ -33,14 +29,14 @@
                 $idUsuario = $usuario["id"];
                 $senhaArmazenada = $usuario["senha"];
                 if ($senhaFornecidaComHash == $senhaArmazenada) { 
-                    header("Location: usuario_validado.php?");
+                    header("Location: ../php/usuario_validado.php?");
                     $_SESSION['id_paciente'] = $usuario['id'];
                 } else {
-                    header("Location: login.php?login=erro");
+                    header("Location: ../php/login.php?login=erro");
 
                 }
             } else {
-                header("Location: login.php?login=erro2");
+                header("Location: ../php/login.php?login=erro2");
             }  
         }    
         catch(PDOException $e) {
