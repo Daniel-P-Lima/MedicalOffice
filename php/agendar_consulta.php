@@ -44,9 +44,13 @@
             <label for="medico" class="form-label">Médico:</label>
             <select name="medico" id="medico" class="form-control" required>
                 <option value="" disabled >Selecione um médico</option>
-                <?php foreach ($medicos as $medico): ?>
+                <?php foreach ($medicos as $medico): if($medico["disponivel"] == 1) { ?>
                     <option value="<?php echo $medico['id']; ?>">
-                        <?php echo $medico['nome']; ?>
+                        <?php echo $medico['nome']; } else {?>
+                        <option value="" disabled>
+                            <?php echo $medico['nome'] . ", Indisponível";}
+                            ?>
+                        </option>
                     </option>
                 <?php endforeach; ?>
             </select>
