@@ -45,7 +45,7 @@ Para garantir a segurança dos dados dos usuários, o JavaScript é utilizado pa
 
 3. **Configure as Credenciais**
 
-   - Dentro do diretório /php, existe um arquivo conexao.php onde é colocado as credenciais do banco de dados.
+   - Dentro do diretório /php, existe um arquivo ```conexao.php``` onde é colocado as credenciais do banco de dados.
    - É necessário também importar ele em cada arquivo, mas já está importado com ```require_once()```
    - Como exemplo: 
 
