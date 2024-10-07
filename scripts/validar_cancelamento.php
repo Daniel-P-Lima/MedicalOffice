@@ -12,7 +12,7 @@
     $stmt = $pdo->prepare($query);
     $stmt->bindValue(":id_consulta", $idConsulta);
     $stmt->execute();
-    header("Location: solicitar_cancelamento.php");
+    header("Location: ../php/solicitar_cancelamento.php");
     } catch(PDOException $e) {
         "Erro: " . $e->getMessage();
     }

@@ -1,5 +1,5 @@
 <?php
-    require_once("agendar_consulta_script.php");
+    require_once("../scripts/agendar_consulta_script.php");
 ?>
 <html>
 <head>
@@ -35,7 +35,7 @@
             </div>
         </div>
     </nav>
-    <form class="row g-3" method="POST" action="consultas.php">
+    <form class="row g-3" method="POST" action="../scripts/consultas.php">
         <div class="col-md-3">
             <label for="data" class="form-label">Data da consulta: </label>
             <input type="text" name="data" id="data" class="form-control" placeholder="DD/MM/AAAA" maxlength="10" required>

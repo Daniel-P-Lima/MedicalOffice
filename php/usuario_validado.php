@@ -1,5 +1,5 @@
 <?php
-  require_once("usuario_validado_script.php");
+  require_once("../scripts/usuario_validado_script.php");
 ?>
 
 <html>
@@ -26,7 +26,7 @@
             <a class="nav-link active" aria-current="page" href="usuario_validado.php">Página Inicial</a>
             </li>
         </ul>
-        <form action="logout.php" class="d-flex mr-1">
+        <form action="../scripts/logout.php" class="d-flex mr-1">
             <button id="sair" class="btn btn-danger me-2" type="submit">
                 <i class="bi bi-box-arrow-right me-2"></i>Sair
             </button>
