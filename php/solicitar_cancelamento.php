@@ -1,5 +1,5 @@
 <?php
-    require_once("verificar_consulta.php");
+    require_once("../scripts/verificar_consulta.php");
 ?>
 
 <!doctype html>
@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li>
-                <a class="nav-link active" aria-current="page" href="../php/usuario_validado.php">Página Inicial</a>
+                <a class="nav-link active" aria-current="page" href="usuario_validado.php">Página Inicial</a>
             </li>
         </ul>
         </div>
@@ -53,7 +53,7 @@
                                                     <hr>
                                                 </div>
                                             <?php } else {?>  
-                                                <form action="validar_cancelamento.php" method="POST" >
+                                                <form action="../scripts/validar_cancelamento.php" method="POST" >
                                                         <div class="alert alert-success" role="alert">
                                                             <h4 class="alert-heading"><?php echo "Data: ". $dataConsulta[$indice] . "<br/>" . "Médico: " . $consulta["nome"] ?></h4>
                                                             <hr>

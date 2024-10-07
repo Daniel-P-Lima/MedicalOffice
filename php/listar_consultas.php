@@ -1,5 +1,5 @@
 <?php
-    require_once('verificar_consulta.php');
+    require_once('../scripts/verificar_consulta.php');
 ?>
 
 
@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li>
-                        <a class="nav-link active" aria-current="page" href="../php/usuario_validado.php">Página Inicial</a>
+                        <a class="nav-link active" aria-current="page" href="usuario_validado.php">Página Inicial</a>
                     </li>
                 </ul>
                 <form action="logout.php" class="d-flex mr-1">
