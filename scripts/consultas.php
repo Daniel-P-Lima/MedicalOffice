@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['id_paciente'])) {
-        header('Location: login.php');
+        header('Location: ../php/login.php');
         exit;
     }
 
@@ -40,11 +40,11 @@
                 // Converte a data para o formato YYYY-MM-DD
                 $dataFormatada = $dataObj->format('Y-m-d');
             } else {
-                header("Location: agendar_consulta.php?agendada=" . 2);
+                header("Location: ../php/agendar_consulta.php?agendada=" . 2);
                 exit;
             }
         } else {
-            header("Location: agendar_consulta.php?agendada=" . 0);
+            header("Location: ../php/agendar_consulta.php?agendada=" . 0);
             exit;
         }
 
@@ -57,7 +57,7 @@
 
         $stmt->execute();
 
-        header("Location: agendar_consulta.php?agendada=" . 1);
+        header("Location: ../php/agendar_consulta.php?agendada=" . 1);
 
 
     }catch(PDOException $e) {

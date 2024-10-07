@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../html/index.html">Home</a>
                     </li>
                 </ul>
             </div>
@@ -31,7 +31,7 @@
         <div class="card shadow-sm" style="max-width: 400px; width: 100%;">
             <div class="card-body">
                 <h3 class="card-title text-center mb-4">Login</h3>
-                <form action="valida_login.php" method="post">
+                <form action="../scripts/valida_login.php" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail</label>
                         <input name="email" type="email" class="form-control" id="email" placeholder="Seu e-mail" required>
