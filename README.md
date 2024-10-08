@@ -1,53 +1,53 @@
-# 🚀 Projeto: Escritório Médico Online <br/> (PROJETO EM DESENVOLVIMENTO)
+# 🚀 Project: Online Medical Office <br/> (PROJECT UNDER DEVELOPMENT)
 
-Bem-vindo ao projeto **Escritório Médico Online**! Este sistema web foi desenvolvido para gerenciar o acesso do usuário a novas consultas, verificar consultas e entre outros.
+Welcome to the **Online Medical Office** project! This web system was developed to manage user access to new appointments, check appointments, and more.
 
-## 📝 Sobre o Projeto
+## 📝 About the Project
 
-Este projeto implementa os conceitos básicos do MySQL, incluindo operações de **Criar**, **Ler**, **Atualizar**, **Deletar** e **Excluir** (CRUD). Foi utilizado PHP com PDO (PHP Data Objects) para conectar o front-end ao back-end de forma segura e eficiente.
+This project implements the basic concepts of MySQL, including **Create**, **Read**, **Update** and **Delete** (CRUD) operations. PHP with PDO (PHP Data Objects) was used to securely and efficiently connect the front-end to the back-end.
 
-Para garantir a segurança dos dados dos usuários, o JavaScript é utilizado para gerar um **hash** das senhas antes de armazená-las no banco de dados. Isso assegura que mesmo em caso de acesso indevido ao banco, as senhas estarão protegidas.
+To ensure user data security, JavaScript is used to generate a **hash** of passwords before storing them in the database. This ensures that even in case of unauthorized access to the database, the passwords will be protected.
 
-## 🚧 Funcionalidades Principais
+## 🚧 Main Features
 
-- **Cadastro de Usuários**: Permite o registro de novos usuários no sistema.
-- **Autenticação**: Login seguro com verificação de credenciais hash.
-- **Gerenciamento de Dados**: Operações CRUD para manipulação de informações no banco de dados.
-- **Interface Responsiva**: Utilização do Bootstrap para garantir compatibilidade com diversos dispositivos.
+- **User Registration**: Allows new users to register in the system.
+- **Authentication**: Secure login with hashed credential verification.
+- **Data Management**: CRUD operations to handle information in the database.
+- **Responsive Interface**: Use of Bootstrap to ensure compatibility with various devices.
 
-## ☕ Tecnologias Utilizadas
+## ☕ Technologies Used
 
-- **HTML/CSS com Bootstrap**: Desenvolvimento de interfaces web amigáveis e responsivas.
-- **PHP**: Linguagem de script para desenvolvimento back-end.
-- **MySQL**: Banco de dados relacional para armazenamento de informações.
-- **JavaScript**: Implementação de funcionalidades no front-end e segurança de senhas.
+- **HTML/CSS with Bootstrap**: Development of user-friendly and responsive web interfaces.
+- **PHP**: Scripting language for back-end development.
+- **MySQL**: Relational database for information storage.
+- **JavaScript**: Front-end functionality, password security implementation and date validation.
 
-## 💻 Ferramentas Utilizadas
+## 💻 Tools Used
 
-- **Visual Studio Code**: Ambiente de desenvolvimento integrado (IDE).
-- **XAMPP**: Plataforma que fornece servidor Apache, PHP e MySQL.
-- **DBeaver**: Ferramenta universal para gerenciamento de bancos de dados.
-- **Bootstrap**: Framework front-end para design responsivo.
+- **Visual Studio Code**: Integrated development environment (IDE).
+- **XAMPP**: Platform providing Apache, PHP, and MySQL servers.
+- **DBeaver**: Universal tool for database management.
+- **Bootstrap**: Front-end framework for responsive design.
 
-## 📦 Como Instalar e Executar o Projeto
+## 📦 How to Install and Run the Project
 
-1. **Clone o Repositório**
+1. **Clone the Repository**
 
    ```bash
    git clone https://github.com/Daniel-P-Lima/hospital.git
    ```
 
-2. **Configure o Ambiente**
+2. **Set Up the Environment**
 
-   - Instale o XAMPP e inicie os módulos Apache e MySQL.
-   - Utilize o DBeaver ou o phpMyAdmin para criar o banco de dados necessário.
-   - Importe o arquivo `database.sql` fornecido no repositório para criar as tabelas.
+   - Install XAMPP and start the Apache and MySQL modules.
+   - Use DBeaver or phpMyAdmin to create the necessary database.
+   - Import the `database.sql` file provided in the repository to create the tables.
 
-3. **Configure as Credenciais**
+3. **Configure Credentials**
 
-   - Dentro do diretório /php, existe um arquivo ```conexao.php``` onde é colocado as credenciais do banco de dados.
-   - É necessário também importar ele em cada arquivo, mas já está importado com ```require_once()```
-   - Como exemplo: 
+   - Inside the /php directory, there is a `conexao.php` file where the database credentials are set.
+   - This file must also be imported in each file, but it is already included using `require_once()`.
+   - For example:
 
    ```php
    $host = "localhost";
@@ -57,13 +57,13 @@ Para garantir a segurança dos dados dos usuários, o JavaScript é utilizado pa
    $charset = "utf8mb4";
    ```
 
-4. **Inicie a Aplicação**
+4. **Start the Application**
 
-   - Mova o projeto para a pasta `htdocs` do XAMPP.
-   - Acesse `http://localhost/seu-projeto` no seu navegador.
+   - Move the project to the `htdocs` folder of XAMPP.
+   - Access `http://localhost/your-project` in your browser.
 
-## 📖 Como Utilizar
+## 📖 How to Use
 
-- **Cadastro e Login**: Crie uma conta e faça login para acessar as funcionalidades.
-- **Gerenciamento**: Utilize as operações CRUD para gerenciar os dados conforme necessário.
-- **Navegação**: A interface intuitiva permite fácil acesso a todas as funcionalidades.
+- **Registration and Login**: Create an account and log in to access features.
+- **Management**: Use CRUD operations to manage data as needed.
+- **Navigation**: The intuitive interface allows easy access to all functionalities.
