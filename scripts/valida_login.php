@@ -3,7 +3,7 @@
     session_start();
 
     $email = $_POST["email"];
-    $senhaFornecida = $_POST['senha']; // A senha fornecida é a senha sem hash
+    $senhaFornecida = $_POST['senha'];
 
 
     if(!empty($email) && !empty($senhaFornecida)) {
@@ -16,10 +16,6 @@
             $stmt->execute();
             $usuario = $stmt->fetch();
 
-            /* Aqui é calculado o hash da senha recebida para validação depois
-            A ideia é criptografar a senha somente quando o usuário se cadastra
-            Para não trafegar na rede a senha já com hash, que seria a senha de acesso
-            */
             $senhaFornecidaComHash = hash("sha256", $senhaFornecida); 
 
             

@@ -30,14 +30,14 @@
 
         $dataConsulta = trim($dataConsulta);
 
-        // Verifica se a data não está vazia
+
         if (!empty($dataConsulta)) {
-            // Tenta criar um objeto DateTime a partir da data informada
+
             $dataObj = DateTime::createFromFormat('d/m/Y', $dataConsulta);
 
-            // Verifica se a data é válida
+
             if ($dataObj && $dataObj->format('d/m/Y') === $dataConsulta) {
-                // Converte a data para o formato YYYY-MM-DD
+
                 $dataFormatada = $dataObj->format('Y-m-d');
             } else {
                 header("Location: ../php/agendar_consulta.php?agendada=" . 2);

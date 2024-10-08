@@ -7,8 +7,7 @@
     $sexoUsuario = $_POST["sexo"];
 
 
-    // BANCO DE DADOS
-    
+
 
     if(!(filter_var($emailUsuario, FILTER_VALIDATE_EMAIL))){
         echo "<h1>Digite um email válido</h1>";
@@ -24,7 +23,7 @@
     
         $stmt->bindValue(":nome", $nomeUsuario);
         $stmt->bindValue(":email", $emailUsuario);
-        $stmt->bindValue(":senha", $senhaUsuario); // Aqui ele recebe a senha com hash para armazenar no banco de dados
+        $stmt->bindValue(":senha", $senhaUsuario);
         $stmt->bindValue(":sexo", $sexoUsuario);
     
         $stmt->execute();

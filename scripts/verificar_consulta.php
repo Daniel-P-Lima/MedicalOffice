@@ -21,12 +21,12 @@
         $stmt->execute();
         
         $consultas = $stmt->fetchAll();
-        // $dataConsulta = new DateTime();
-        // $dataConsulta->date_create_from_format($consultas[0]["data_consulta"],"Y-m-d");
+        
+        
         
         for($i = 0; $i < count($consultas); $i++) {
             $dataConsulta[] = date("d/m/Y", strtotime($consultas[$i]["data_consulta"]));
-        }// $dataConsulta = date_format($consultas[0]["data_consulta"], "d/m/Y");
+        }
 
     } catch(PDOException $e) {
         echo "Erro no PDO -> " . $e->getMessage();
