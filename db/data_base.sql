@@ -52,3 +52,15 @@ CREATE TABLE consultas(
 	FOREIGN KEY (fk_key_medico) REFERENCES medicos(id)
 	
 );
+
+CREATE TABLE administradores(
+	id_adminstrador INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	senha VARCHAR(200) NOT NULL
+);
+
+INSERT INTO administradores (nome, email, senha) VALUES 
+('Daniel Lima', 'daniel@adm.com', '12345'),
+('Livia Sales', 'livia@adm.com', '12345'),
+('Aderbal Junior', 'aderbal@adm.com', '09876');
