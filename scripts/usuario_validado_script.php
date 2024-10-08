@@ -1,7 +1,7 @@
 <?php
   require_once("conexao.php");
   session_start();
-  if (!isset($_SESSION['id_paciente'])) {
+  if (!isset($_SESSION['id_paciente']) && !isset($_SESSION["id_administrador"])) {
       
       header('Location: login.php');
       exit;
